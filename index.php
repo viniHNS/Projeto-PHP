@@ -11,8 +11,6 @@
 </head>
 <body>
     <?php include_once("layout/navbar.php"); ?>
-    
-    
     <script src="js/script.js"></script>
 </body>
 </html>
