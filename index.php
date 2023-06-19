@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+    <h1>OLA</h1>
     <script src="js/script.js"></script>
 </body>
 </html>
