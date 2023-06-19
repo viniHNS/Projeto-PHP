@@ -3,7 +3,7 @@
 
 
 <?php 
-    $url_img = 'https://shibe.online/api/shibes?count=1&urls=true&httpsUrls=false';
+    $url_img = 'https://shibe.online/api/cats?count=1&urls=true&httpsUrls=false';
     @$dados_img = json_decode(file_get_contents($url_img));
 
     include('php/db/config.php');
