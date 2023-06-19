@@ -54,4 +54,16 @@
             ?>
         </div>
     </div>
+    <div class="row">
+        <div class="col-md-6 mt-2">
+            <p class="display-6">mysql:</p>
+            <p><?php 
+                $sql = "CREATE DATABASE IF NOT EXISTS mydb";
+                $test = $conn->query($sql);
+
+                
+            
+            ?></p>
+        </div>
+    </div>
 </div>
