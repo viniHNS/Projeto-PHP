@@ -1,6 +1,5 @@
 <?php 
     $form_value = $_POST['cep_input'] ?? '';
-
 ?>
 
 <div class="container mt-5">
@@ -52,18 +51,6 @@
             <?php 
                 echo "<p>" . @$dados->city . " - " . @$dados->state . "</p>";
             ?>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-6 mt-2">
-            <p class="display-6">mysql:</p>
-            <p><?php 
-                $sql = "CREATE DATABASE IF NOT EXISTS mydb";
-                $test = $conn->query($sql);
-
-                
-            
-            ?></p>
         </div>
     </div>
 </div>
