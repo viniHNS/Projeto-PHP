@@ -8,7 +8,7 @@
             <div class="form">
                 <form action="<?php echo $_SERVER['PHP_SELF'] . '?page=cnpj' ?>" method="post">
                     <div class="mb-3 justify-content-center">
-                        <label for="cnpj_input" class="form-label display-5 d-flex justify-content-center">Consultar CNPJ</label>
+                        <label for="cnpj_input" class="form-label display-5 d-flex justify-content-center" id="cnpj_input">Consultar CNPJ</label>
                         <input type="text" class="form-control" name="cnpj_input" id="cnpj_input" placeholder="Digite um CNPJ" 
                         value="<?php echo $form_value ?>" onfocus="mascaraCNPJ()">
                     </div>
@@ -87,8 +87,7 @@
                 }
             } 
                 
-            ?>
-            
+            ?>  
         </div>
     </div>
 </div>

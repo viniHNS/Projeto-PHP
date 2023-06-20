@@ -24,13 +24,11 @@
 
                     @$dados = json_decode(file_get_contents($url));
 
-
                 } elseif(isset($_POST['cep_input']) && empty($_POST['cep_input'])){
                     echo "<script> Swal.fire({
                         icon: 'error',
                         title: 'Oops...',
                         text: 'Digite um CEP!',
-                       
                       })</script>";
                 }
                 if(@$dados === NULL && !empty($_POST['cep_input'])){
@@ -38,7 +36,7 @@
                         icon: 'error',
                         title: 'Oops...',
                         text: 'CEP inválido!',
-                      })</script>";
+                    })</script>";
                 }
             ?>
         </div>
