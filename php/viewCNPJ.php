@@ -15,7 +15,6 @@
                     <div class="d-flex justify-content-center">
                         <input type="submit" value="Consultar" class="btn btn-primary">
                     </div>
-                    
                 </form>
             </div>
             <?php
@@ -30,63 +29,64 @@
 
                     @$dados = json_decode(file_get_contents($url));
 
-                    $simples = $dados->opcao_pelo_simples == NULL ? "Não" : "Sim";
-                    $mei = $dados->opcao_pelo_mei == NULL ? "Não" : "Sim";
+                    if(empty($_POST['cnpj_input'])){
+                        echo "<script> Swal.fire({
+                            icon: 'error',
+                            title: 'Oops...',
+                            text: 'Digite um CNPJ!',
+                           
+                        })</script>";
+                    }
+
+                    if(@$dados === NULL && !empty($_POST['cnpj_input'])){
+                        echo "<script> Swal.fire({
+                            icon: 'error',
+                            title: 'Oops...',
+                            text: 'CNPJ inválido!',
+                          })</script>";
+                    }   
+                    
+                    if(@$dados != NULL && !empty($_POST['cnpj_input'])){
+                        $simples = $dados->opcao_pelo_simples == NULL ? "Não" : "Sim";
+                        $mei = $dados->opcao_pelo_mei == NULL ? "Não" : "Sim";
             
-                                  
-                    echo "<div class='container' >
-                    <div class='row'>
-                        <div class='col-md-12 mt-5 '>
-                            <table class='table table-striped-columns table-hover'>
-                                <tbody>
-                                    <tr>
-                                        <th scope='row'>CNPJ</th>
-                                        <td>  $cnpj_num_raw  </td>
-                                    </tr>
-                                    <tr>
-                                        <th scope='row'>Razão Social</th>
-                                        <td>  $dados->razao_social  </td>     
-                                    </tr>
-                                    <tr>
-                                        <th scope='row'>Nome fantasia</th>
-                                        <td>  $dados->nome_fantasia  </td>
-                                    </tr>
-                                    <tr>
-                                        <th scope='row'>Situação</th>
-                                        <td>  $dados->descricao_situacao_cadastral  </td>
-                                    </tr>
-                                    <tr>
-                                        <th scope='row'>Simples Nacional</th>
-                                        <td>  $simples   </td>
-                                    </tr>
-                                    <tr>
-                                        <th scope='row'>MEI</th>
-                                        <td>  $mei  </td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                        echo "<div class='container' >
+                        <div class='row'>
+                            <div class='col-md-12 mt-5 '>
+                                <table class='table table-striped-columns table-hover'>
+                                    <tbody>
+                                        <tr>
+                                            <th scope='row'>CNPJ</th>
+                                            <td>  $cnpj_num_raw  </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope='row'>Razão Social</th>
+                                            <td>  $dados->razao_social  </td>     
+                                        </tr>
+                                        <tr>
+                                            <th scope='row'>Nome fantasia</th>
+                                            <td>  $dados->nome_fantasia  </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope='row'>Situação</th>
+                                            <td>  $dados->descricao_situacao_cadastral  </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope='row'>Simples Nacional</th>
+                                            <td>  $simples   </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope='row'>MEI</th>
+                                            <td>  $mei  </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
-                    </div>
-                </div>";
-
-                
-
-                } elseif(isset($_POST['cnpj_input']) && empty($_POST['cnpj_input'])){
-                    echo "<script> Swal.fire({
-                        icon: 'error',
-                        title: 'Oops...',
-                        text: 'Digite um CNPJ!',
-                       
-                      })</script>";
+                    </div>";
                 }
-                if(@$dados === NULL && !empty($_POST['cnpj_input'])){
-                    echo "<script> Swal.fire({
-                        icon: 'error',
-                        title: 'Oops...',
-                        text: 'CNPJ inválido!',
-                      })</script>";
-                } 
-          
+            } 
+                
             ?>
             
         </div>
