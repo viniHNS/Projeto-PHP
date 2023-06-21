@@ -20,7 +20,7 @@
             <?php
                 if(isset($_POST['cnpj_input']) && !empty($_POST['cnpj_input'])){
                     $cnpj_num_raw =  $_POST['cnpj_input'];
-                    $cnpj_num =  $_POST['cnpj_input'];
+                    $cnpj_num =   $cnpj_num_raw;
                     $cnpj_num = str_replace(".", "", $cnpj_num);
                     $cnpj_num = str_replace("/", "", $cnpj_num);
                     $cnpj_num = str_replace("-", "", $cnpj_num);
