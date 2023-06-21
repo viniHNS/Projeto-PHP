@@ -40,7 +40,7 @@
   
                     if(@$dados != NULL && !empty($ano)){
                         $ano = $_POST["feriado_input"];
-                        echo " <div class='col-md-12'>
+                        echo " <div class='col-md-12 mt-5'>
                         <table class='table table-striped-columns table-hover'><tbody>";
                         for($i = 0; $i < count($dados); $i++){
                             echo "
