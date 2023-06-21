@@ -19,6 +19,7 @@
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="?page=cnpj">CNPJ</a></li>
                             <li><a class="dropdown-item" href="?page=cep">CEP</a></li>
+                            <li><a class="dropdown-item" href="?page=feriado">Feriados</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
