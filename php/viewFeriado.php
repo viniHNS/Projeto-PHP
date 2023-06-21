@@ -1,6 +1,5 @@
 <?php 
     $form_value = $_POST["feriado_input"] ?? '';
-    
 ?>
 
 <div class="container mt-5">
@@ -23,7 +22,7 @@
                     $url = "https://brasilapi.com.br/api/feriados/v1/$ano";
                     @$dados = json_decode(file_get_contents($url));
 
-                    if(empty($ano)){
+                    if(isset($_POST["feriado_input"]) && empty($_POST["feriado_input"])){
                         echo "<script> Swal.fire({
                             icon: 'error',
                             title: 'Oops...',
@@ -39,24 +38,19 @@
                         })</script>";
                     }
   
-
                     if(@$dados != NULL && !empty($ano)){
                         $ano = $_POST["feriado_input"];
                         echo " <div class='col-md-12'>
-                        <table class='table table-striped-columns table-hover'>";
+                        <table class='table table-striped-columns table-hover'><tbody>";
                         for($i = 0; $i < count($dados); $i++){
                             echo "
-                                <tbody>
-                                    <tr>
-                                        <td>" .  ($dados)[$i]-> name . " - " . date('d/m/Y', strtotime($dados[$i]->date)) . "</td>
-                                    </tr>    
-                                </tbody>    
+                                <tr>
+                                    <td><strong>" .  ($dados)[$i]-> name . "</strong>" ." - " . date('d/m/Y', strtotime($dados[$i]->date)) . "</td>
+                                </tr>     
                             ";
                         } 
-                        echo "</table>
-                        </div>  ";
+                        echo "</tbody>  </table> </div>";
                     }
-
                 ?>
             </div>
         </div>
