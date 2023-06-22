@@ -46,7 +46,7 @@ let docDefinition = {
 	}
 }
 
-document.getElementById('open').addEventListener('click', () => {
+document.getElementById('btn-pdf').addEventListener('click', () => {
     pdfMake.createPdf(docDefinition).download('myPDF.pdf');
 });
 
