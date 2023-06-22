@@ -55,4 +55,9 @@
             </div>
         </div>
     </div>
+    <div class="row">
+        <div class="col-md-6">
+            <input id="btn-pdf" class="btn btn-primary" type="button" value="PDF">
+        </div>
+    </div>
 </div>
